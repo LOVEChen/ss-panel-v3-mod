@@ -2428,8 +2428,8 @@
         "require-dev": {
             "symfony/debug": "~2.7",
             "symfony/phpunit-bridge": "~2.7"
-        },
 
+        },
         "require": {
             "php": ">=5.2.7"
         },
@@ -2565,19 +2565,14 @@
             "symfony/dependency-injection": "~2.6|~3.0.0",
             "symfony/expression-language": "~2.6|~3.0.0",
             "symfony/stopwatch": "~2.3|~3.0.0"
-<<<<<<< HEAD
+
         },
         "suggest": {
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-=======
-        },
-        "suggest": {
-            "symfony/dependency-injection": "",
-            "symfony/http-kernel": ""
-        },
->>>>>>> dev
+
+
         "time": "2016-07-28 16:56:28",
         "type": "library",
         "extra": {
@@ -2610,8 +2605,7 @@
         ],
         "description": "Symfony EventDispatcher Component",
         "homepage": "https://symfony.com"
-<<<<<<< HEAD
-=======
+
     },
     {
         "name": "telegram-bot/api",
@@ -2669,6 +2663,6 @@
             "php",
             "telegram"
         ]
->>>>>>> dev
+
     }
 ]
