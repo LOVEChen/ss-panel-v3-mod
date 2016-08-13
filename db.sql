@@ -243,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `unblockip` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL,
+  ADD PRIMARY KEY `id` int(11) NOT NULL,
   `user_name` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
   `email` varchar(32) NOT NULL,
   `pass` varchar(64) NOT NULL,
@@ -411,7 +411,6 @@ ALTER TABLE `unblockip`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `user_name` (`user_name`),
   ADD KEY `uid` (`id`),
   ADD KEY `email` (`email`);
