@@ -1,7 +1,30 @@
-SET NAMES utf8;
-SET time_zone = '+00:00';
-SET foreign_key_checks = 0;
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.5
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: 2016-04-28 21:58:13
+-- 服务器版本： 5.5.48-log
+-- PHP Version: 5.6.20
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `glzjin_ss2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `alive_ip`
+--
 
 CREATE TABLE IF NOT EXISTS `alive_ip` (
   `id` bigint(20) NOT NULL,
@@ -11,12 +34,23 @@ CREATE TABLE IF NOT EXISTS `alive_ip` (
   `datetime` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `announcement`
+--
+
 CREATE TABLE IF NOT EXISTS `announcement` (
   `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `blockip`
+--
 
 CREATE TABLE IF NOT EXISTS `blockip` (
   `id` bigint(20) NOT NULL,
@@ -25,6 +59,11 @@ CREATE TABLE IF NOT EXISTS `blockip` (
   `datetime` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `code`
+--
 
 CREATE TABLE IF NOT EXISTS `code` (
   `id` bigint(20) NOT NULL,
@@ -36,6 +75,11 @@ CREATE TABLE IF NOT EXISTS `code` (
   `usedatetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `link`
+--
 
 CREATE TABLE IF NOT EXISTS `link` (
   `id` bigint(20) NOT NULL,
@@ -50,6 +94,11 @@ CREATE TABLE IF NOT EXISTS `link` (
   `method` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `login_ip`
+--
 
 CREATE TABLE IF NOT EXISTS `login_ip` (
   `id` bigint(20) NOT NULL,
@@ -59,12 +108,23 @@ CREATE TABLE IF NOT EXISTS `login_ip` (
   `type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `radius_ban`
+--
+
 CREATE TABLE IF NOT EXISTS `radius_ban` (
   `id` int(11) NOT NULL,
   `userid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
+
+--
+-- 表的结构 `speedtest`
+--
 
 CREATE TABLE IF NOT EXISTS `speedtest` (
   `id` bigint(20) NOT NULL,
@@ -81,6 +141,11 @@ CREATE TABLE IF NOT EXISTS `speedtest` (
   `cmccdownload` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ss_invite_code`
+--
 
 CREATE TABLE IF NOT EXISTS `ss_invite_code` (
   `id` int(11) NOT NULL,
@@ -90,6 +155,11 @@ CREATE TABLE IF NOT EXISTS `ss_invite_code` (
   `updated_at` timestamp NOT NULL DEFAULT '2016-06-01 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ss_node`
+--
 
 CREATE TABLE IF NOT EXISTS `ss_node` (
   `id` int(11) NOT NULL,
@@ -112,6 +182,11 @@ CREATE TABLE IF NOT EXISTS `ss_node` (
   `node_ip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ss_node_info`
+--
 
 CREATE TABLE IF NOT EXISTS `ss_node_info` (
   `id` int(11) NOT NULL,
@@ -121,7 +196,11 @@ CREATE TABLE IF NOT EXISTS `ss_node_info` (
   `log_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
+--
+-- 表的结构 `ss_node_online_log`
+--
 
 CREATE TABLE IF NOT EXISTS `ss_node_online_log` (
   `id` int(11) NOT NULL,
@@ -130,6 +209,11 @@ CREATE TABLE IF NOT EXISTS `ss_node_online_log` (
   `log_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ss_password_reset`
+--
 
 CREATE TABLE IF NOT EXISTS `ss_password_reset` (
   `id` int(11) NOT NULL,
@@ -139,7 +223,11 @@ CREATE TABLE IF NOT EXISTS `ss_password_reset` (
   `expire_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
+--
+-- 表的结构 `unblockip`
+--
 
 CREATE TABLE IF NOT EXISTS `unblockip` (
   `id` bigint(20) NOT NULL,
@@ -148,7 +236,11 @@ CREATE TABLE IF NOT EXISTS `unblockip` (
   `userid` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
+--
+-- 表的结构 `user`
+--
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL,
@@ -193,7 +285,11 @@ CREATE TABLE IF NOT EXISTS `user` (
   `remark` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
+--
+-- 表的结构 `user_token`
+--
 
 CREATE TABLE IF NOT EXISTS `user_token` (
   `id` int(11) NOT NULL,
@@ -203,6 +299,11 @@ CREATE TABLE IF NOT EXISTS `user_token` (
   `expire_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `user_traffic_log`
+--
 
 CREATE TABLE IF NOT EXISTS `user_traffic_log` (
   `id` int(11) NOT NULL,
@@ -215,127 +316,238 @@ CREATE TABLE IF NOT EXISTS `user_traffic_log` (
   `log_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Indexes for dumped tables
+--
 
+--
+-- Indexes for table `alive_ip`
+--
 ALTER TABLE `alive_ip`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `announcement`
+--
 ALTER TABLE `announcement`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `blockip`
+--
 ALTER TABLE `blockip`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `code`
+--
 ALTER TABLE `code`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `link`
+--
 ALTER TABLE `link`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `login_ip`
+--
 ALTER TABLE `login_ip`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `radius_ban`
+--
 ALTER TABLE `radius_ban`
   ADD PRIMARY KEY (`id`);
 
 
-
+--
+-- Indexes for table `speedtest`
+--
 ALTER TABLE `speedtest`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `ss_invite_code`
+--
 ALTER TABLE `ss_invite_code`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
-
+--
+-- Indexes for table `ss_node`
+--
 ALTER TABLE `ss_node`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `ss_node_info`
+--
 ALTER TABLE `ss_node_info`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `ss_node_online_log`
+--
 ALTER TABLE `ss_node_online_log`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `ss_password_reset`
+--
 ALTER TABLE `ss_password_reset`
   ADD PRIMARY KEY (`id`);
 
 
+--
+-- Indexes for table `unblockip`
+--
 ALTER TABLE `unblockip`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `user`
+--
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_name` (`user_name`),
   ADD KEY `uid` (`id`),
   ADD KEY `email` (`email`);
 
-
+--
+-- Indexes for table `user_token`
+--
 ALTER TABLE `user_token`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `user_traffic_log`
+--
 ALTER TABLE `user_traffic_log`
   ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
+--
+-- AUTO_INCREMENT for table `alive_ip`
+--
 ALTER TABLE `alive_ip`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `announcement`
+--
 ALTER TABLE `announcement`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `blockip`
+--
 ALTER TABLE `blockip`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `code`
+--
 ALTER TABLE `code`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `link`
+--
 ALTER TABLE `link`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `login_ip`
+--
 ALTER TABLE `login_ip`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `radius_ban`
+--
 ALTER TABLE `radius_ban`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `speedtest`
+--
 ALTER TABLE `speedtest`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `ss_invite_code`
+--
 ALTER TABLE `ss_invite_code`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `ss_node`
+--
 ALTER TABLE `ss_node`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `ss_node_info`
+--
 ALTER TABLE `ss_node_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `ss_node_online_log`
+--
 ALTER TABLE `ss_node_online_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `ss_password_reset`
+--
 ALTER TABLE `ss_password_reset`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+--
+-- AUTO_INCREMENT for table `unblockip`
+--
 ALTER TABLE `unblockip`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `user`
+--
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `user_token`
+--
 ALTER TABLE `user_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `user_traffic_log`
+--
 ALTER TABLE `user_traffic_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.5
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: 2016-04-28 21:59:55
+-- 服务器版本： 5.5.48-log
+-- PHP Version: 5.6.20
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `glzjin_ss2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ss_node`
+--
 
 CREATE TABLE IF NOT EXISTS `ss_node` (
   `id` int(11) NOT NULL,
@@ -358,6 +570,9 @@ CREATE TABLE IF NOT EXISTS `ss_node` (
   `node_ip` text
 ) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8mb4;
 
+--
+-- 转存表中的数据 `ss_node`
+--
 
 INSERT INTO `ss_node` (`id`, `name`, `type`, `server`, `method`, `info`, `status`, `sort`, `custom_method`, `traffic_rate`, `node_class`, `node_speedlimit`, `node_connector`, `node_bandwidth`, `node_bandwidth_limit`, `bandwidthlimit_resetday`, `node_heartbeat`, `node_ip`) VALUES
 (NULL, '统一验证登陆', 0, 'zhaojin97.cn', 'radius', '统一登陆验证', '可用', 999, 0, 1, 0, 0, 0, 0, 0, 0, 0, ''),
